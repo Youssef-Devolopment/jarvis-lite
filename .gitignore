@@ -15,5 +15,7 @@ logs/
 *.db
 *.sqlite
 .voice_cache/
+.browser_profile/
+.headless_profile/
 pending.json
 jarvis.lock
