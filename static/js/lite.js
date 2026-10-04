@@ -15,7 +15,7 @@ function add(cls, who, text) {
   return div;
 }
 
-const TITLES = {core: "Core", web: "Web", productivity: "Productivity", system: "System"};
+const TITLES = {core: "Core", web: "Web", productivity: "Productivity", system: "System", other: "More"};
 
 fetch("/api/info").then(r => r.json()).then(info => {
   const skills = info.skills || [];

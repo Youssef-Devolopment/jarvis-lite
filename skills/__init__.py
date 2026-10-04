@@ -18,5 +18,14 @@ del _g
 
 from skills import auto_generated  # noqa: F401
 
+# Skills registered after grouping (auto-generated) get their own group
+# so the UI chip list always covers every loaded skill.
+_grouped = set()
+for _names in GROUPS.values():
+    _grouped.update(_names)
+GROUPS["other"] = sorted(
+    s.name for s in _registry.all_skills() if s.name not in _grouped)
+del _grouped
+
 __all__ = ["Skill", "all_skills", "dispatch", "get_skill", "toggle_skill",
            "GROUPS"]
