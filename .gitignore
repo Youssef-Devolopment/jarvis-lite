@@ -1,0 +1,19 @@
+# --- secrets & env (never commit keys) ---
+.env
+.env.local
+.env.bak
+
+# --- python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- runtime data (never commit) ---
+logs/
+*.log
+*.db
+*.sqlite
+.voice_cache/
+pending.json
+jarvis.lock

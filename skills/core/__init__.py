@@ -1,0 +1,9 @@
+from skills.core import clock            # noqa: F401
+from skills.core import math_skill       # noqa: F401
+from skills.core import weather          # noqa: F401
+from skills.core import wiki             # noqa: F401
+from skills.core import translate        # noqa: F401
+from skills.core import routine_dictionary  # noqa: F401
+from skills.core import routine_fx          # noqa: F401
+from skills.core import crypto           # noqa: F401
+from skills.core import routine_quotes   # noqa: F401

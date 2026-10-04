@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b10">
+<title>JARVIS Lite</title>
+<link rel="stylesheet" href="/static/css/lite.css">
+</head>
+<body>
+<main id="app">
+  <header><h1>JARVIS<span class="lite-tag">LITE</span></h1><span id="mood"></span></header>
+  <details id="skills-groups">
+    <summary><span id="skills-count"></span></summary>
+    <div id="groups"></div>
+  </details>
+  <div id="log" aria-live="polite"></div>
+  <form id="box">
+    <input id="text" type="text" placeholder="Ask something…" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+  <p class="hint"><kbd>Enter</kbd> to send · click a skill chip to fill the box</p>
+</main>
+<script src="/static/js/lite.js"></script>
+</body>
+</html>

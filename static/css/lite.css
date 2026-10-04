@@ -1,0 +1,73 @@
+:root{
+  --accent:#8b3fff;
+  --accent-hi:#b78bff;
+  --accent-soft:rgba(139,63,255,.16);
+  --bg:#0b0b10;
+  --panel:#14141c;
+  --panel-2:#101018;
+  --line:#2a2a3a;
+  --text:#f0ecf9;
+  --dim:#8f8fa3;
+  --you:#9ecbff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:system-ui,"Segoe UI",sans-serif;
+  color:var(--text);
+  margin:0;min-height:100vh;
+  background:
+    radial-gradient(900px 480px at 15% -5%,rgba(139,63,255,.14),transparent 60%),
+    radial-gradient(760px 420px at 95% 110%,rgba(0,229,255,.07),transparent 60%),
+    var(--bg);
+}
+#app{max-width:680px;margin:0 auto;padding:20px 16px 28px}
+header{display:flex;align-items:baseline;gap:12px;padding:4px 2px 12px;border-bottom:1px solid var(--line)}
+h1{font-size:21px;margin:0;letter-spacing:3px;font-weight:800;animation:glow 6s ease-in-out infinite}
+h1 .lite-tag{font-size:10px;letter-spacing:2px;color:var(--accent-hi);border:1px solid var(--accent);border-radius:999px;padding:2px 9px;margin-left:8px;vertical-align:3px;animation:none}
+@keyframes glow{
+  0%,100%{text-shadow:0 0 0 transparent}
+  50%{text-shadow:0 0 16px rgba(139,63,255,.6)}
+}
+#mood{opacity:.65;font-size:13px;margin-left:auto}
+#skills-groups{border:1px solid var(--line);border-radius:12px;margin:14px 0 0;background:linear-gradient(180deg,rgba(139,63,255,.06),transparent 40%),var(--panel);box-shadow:0 8px 28px rgba(0,0,0,.35)}
+#skills-groups summary{cursor:pointer;padding:11px 14px;font-size:13px;color:var(--dim);list-style:none;transition:color .2s}
+#skills-groups summary:hover{color:var(--text)}
+#skills-groups summary::-webkit-details-marker{display:none}
+#skills-groups summary::before{content:"+ ";color:var(--accent)}
+#skills-groups[open] summary::before{content:"– "}
+#groups{padding:0 14px 14px;display:flex;flex-direction:column;gap:10px}
+.group-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent-hi);margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;padding:5px 12px;border:1px solid var(--line);border-radius:20px;background:var(--panel-2);color:var(--text);cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}
+.chip:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 4px 14px rgba(139,63,255,.25)}
+.chip:active{transform:translateY(0) scale(.97)}
+#log{border:1px solid var(--line);border-radius:12px;min-height:300px;max-height:52vh;padding:14px;margin:14px 0;overflow-y:auto;background:var(--panel);box-shadow:0 8px 28px rgba(0,0,0,.35);scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+#log::-webkit-scrollbar{width:8px}
+#log::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
+.msg{margin:9px 0;line-height:1.5;animation:rise .25s ease both}
+@keyframes rise{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:none}
+}
+.msg.you{color:var(--you)}
+.msg:not(.you){background:rgba(139,63,255,.06);border-left:2px solid var(--accent);border-radius:0 8px 8px 0;padding:8px 12px}
+.msg.typing{opacity:.55}
+.msg small{opacity:.5;margin-right:8px;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+#box{display:flex;gap:8px}
+#text{flex:1;padding:12px;border-radius:10px;border:1px solid #3a3a4d;background:var(--panel-2);color:var(--text);font-size:14px;transition:border-color .2s,box-shadow .2s}
+#text:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+#text::placeholder{color:var(--dim)}
+button{padding:12px 20px;border-radius:10px;border:0;background:linear-gradient(180deg,var(--accent-hi),var(--accent));color:#fff;font-weight:700;letter-spacing:1px;cursor:pointer;transition:filter .2s,transform .15s;box-shadow:0 4px 16px rgba(139,63,255,.35)}
+button:hover{filter:brightness(1.12)}
+button:active{transform:scale(.97)}
+button:focus-visible,#text:focus-visible,summary:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{margin-top:10px;font-size:11.5px;color:var(--dim);text-align:center;letter-spacing:.4px}
+.hint kbd{border:1px solid var(--line);border-radius:4px;padding:0 6px;font-family:inherit;background:var(--panel-2)}
+@media (max-width:520px){
+  #app{padding:14px 10px 22px}
+  h1{font-size:17px;letter-spacing:2px}
+  #log{min-height:240px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
