@@ -1,12 +1,15 @@
 from __future__ import annotations
 import os
 from dataclasses import dataclass
+from pathlib import Path
 from dotenv import load_dotenv
 from errors import ConfigError
 from logger import get_logger
 
 log = get_logger(__name__)
 load_dotenv()
+
+ENV_PATH = Path(__file__).resolve().parent / ".env"
 
 
 @dataclass(frozen=True)
@@ -136,3 +139,34 @@ def get_settings() -> Settings:
     if _settings is None:
         _settings = Settings.load()
     return _settings
+
+
+def ensure_flask_secret(path: Path | None = None) -> str:
+    """Stable Flask SECRET_KEY, persisted in .env on first boot."""
+    import secrets
+    secret = (os.getenv("FLASK_SECRET_KEY") or "").strip()
+    if secret:
+        return secret
+    p = Path(path) if path else ENV_PATH
+    if p.exists():
+        for ln in p.read_text(encoding="utf-8").splitlines():
+            if ln.strip().startswith("FLASK_SECRET_KEY="):
+                saved = ln.split("=", 1)[1].strip()
+                if saved:
+                    os.environ["FLASK_SECRET_KEY"] = saved
+                    return saved
+    generated = secrets.token_hex(32)
+    try:
+        lines: list[str] = []
+        if p.exists():
+            lines = p.read_text(encoding="utf-8").splitlines()
+            lines = [ln for ln in lines
+                     if not ln.strip().startswith("FLASK_SECRET_KEY=")]
+        lines.append(f"FLASK_SECRET_KEY={generated}")
+        p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        os.environ["FLASK_SECRET_KEY"] = generated
+        log.info("FLASK_SECRET_KEY generated and saved to .env.")
+        return generated
+    except OSError as exc:
+        log.warning("Could not persist Flask secret (%s).", exc)
+        return generated

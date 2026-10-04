@@ -16,3 +16,4 @@ piper-tts>=1.2.0
 ddgs>=8.0
 duckduckgo-search>=8.0
 psutil>=5.9
+psutil>=5.9
