@@ -19,7 +19,9 @@ def _load_group(mod):
 
 
 GROUPS = {}
-for _g in ("core", "web", "productivity", "system"):
+# NOTE: system loads before web on purpose — "open X" must reach the
+# app launcher before web_open claims it as a site search.
+for _g in ("core", "system", "web", "productivity"):
     GROUPS[_g] = _load_group(_g)
 del _g
 
