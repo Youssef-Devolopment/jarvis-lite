@@ -4,7 +4,7 @@
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey)
 
 Same brain family as [JARVIS](https://github.com/Youssef-Devolopment/jarvis)
-(full build: 125 skills), trimmed to the essentials: **26 skills**
+(full build: 131 skills), trimmed to the essentials: **27 skills**
 (time, math, notes, todos, timer, weather, wiki, crypto, translate,
 dictionary, quotes, FX, web search/fetch/read, screenshots, volume,
 brightness, lock, launching apps, VSCode-side helpers) behind one
