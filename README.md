@@ -1,17 +1,17 @@
-# JARVIS Lite — the 25-skill sip of JARVIS
+# JARVIS Lite — the 28-skill sip of JARVIS
 
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey)
 
 Same brain family as [JARVIS](https://github.com/Youssef-Devolopment/jarvis)
-(full build: 131 skills), trimmed to the essentials: **27 skills**
+(full build: 133 skills), trimmed to the essentials: **28 skills**
 (time, math, notes, todos, timer, weather, wiki, crypto, translate,
 dictionary, quotes, FX, web search/fetch/read, screenshots, volume,
-brightness, lock, launching apps, VSCode-side helpers) behind one
-minimal chat page on **port 5002**.
+brightness, lock, launching apps, VSCode-side helpers, plus one
+community plugin) behind one minimal chat page on **port 5002**.
 
-No overlay HUD, no councils, no app learner, no auto skill maker —
-if you outgrow it, the full build is one command away.
+No councils, no app learner, no MCP layer — if you outgrow it,
+the full build is one command away.
 
 ## Install (Windows)
 
@@ -37,7 +37,29 @@ Open `http://127.0.0.1:5002`, click a skill chip or type:
 - `open notepad` · `search for quantum dots` · `note remember milk`
 
 API: `GET /api/info` (mood, skill list + groups),
-`POST /api/chat` (`{text, sid}` → `{reply}`).
+`POST /api/chat` (`{text, sid}` → `{reply}`),
+`GET /api/command` (SSE — streams the same reply live).
+
+## HUD
+
+The head-up display from the full build, included here: press
+**Ctrl+Alt+J** (or the **HUD** button, or `Alt+Space`) to summon a
+frameless always-on-top bar that streams answers as they are written,
+flashes green on alerts (timers, reminders), and hides on Esc.
+`GET /api/overlay/state` / `POST /api/overlay/toggle` drive it from
+the page.
+
+## Library
+
+The **Library** panel installs extra skill packs without touching the
+shipped set: 18 packs (ROT13/caesar ciphers, anagrams, weekday math,
+leet speak, word counter, and more) with live search, one-click
+install/remove, and **Import** — drop in your own pack `.py` (it is
+validated first: `valve`, `subprocess`, `shutil` and friends are
+rejected before anything is written).
+
+API: `GET /api/library`, `POST /api/library/skill`
+(`{id, remove}`), `POST /api/library/import` (multipart file).
 
 ## Health
 
