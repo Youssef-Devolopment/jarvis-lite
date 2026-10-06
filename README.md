@@ -1,13 +1,14 @@
-# JARVIS Lite — the 28-skill sip of JARVIS
+# JARVIS Lite — the 32-skill sip of JARVIS
 
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey)
 
 Same brain family as [JARVIS](https://github.com/Youssef-Devolopment/jarvis)
-(full build: 133 skills), trimmed to the essentials: **28 skills**
+(full build: 142 skills), trimmed to the essentials: **32 skills**
 (time, math, notes, todos, timer, weather, wiki, crypto, translate,
 dictionary, quotes, FX, web search/fetch/read, screenshots, volume,
-brightness, lock, launching apps, VSCode-side helpers, plus one
+brightness, lock, launching apps, VSCode-side helpers, RAM guard,
+mic test, docs reader, parallel explore, plus one
 community plugin) behind one minimal chat page on **port 5002**.
 
 No councils, no app learner, no MCP layer — if you outgrow it,
@@ -35,6 +36,8 @@ Open `http://127.0.0.1:5002`, click a skill chip or type:
 
 - `tell me the time` · `2+2*2` · `set a timer for 5 minutes`
 - `open notepad` · `search for quantum dots` · `note remember milk`
+- `ram guard status` · `mic test` · `docs for requests` ·
+  `explore best async http client python`
 
 API: `GET /api/info` (mood, skill list + groups),
 `POST /api/chat` (`{text, sid}` → `{reply}`),
@@ -60,6 +63,23 @@ rejected before anything is written).
 
 API: `GET /api/library`, `POST /api/library/skill`
 (`{id, remove}`), `POST /api/library/import` (multipart file).
+
+## Suites
+
+The light suites ported from the full build:
+
+- **System Guard** — a RAM watchdog samples once a minute and toasts
+  (once per episode, naming the hungriest process) when memory
+  crosses `guard_ram_threshold` (default 90%); *"ram guard status"*
+  and *"set ram guard to 85"* control it, `guard_enabled` pref
+  toggles it.
+- **Mic pre-flight** — *"mic test"* detects the default input
+  device and reads 0.4 s of audio so a silent/dead mic is caught
+  before you start dictating.
+- **Deep Web** — *"docs for X"* pulls real PyPI metadata or GitHub
+  READMEs and briefs them (extractive fallback when keyless);
+  *"explore X"* fans four query variants across the search tiers at
+  once, dedupes by URL, and returns one sourced answer.
 
 ## Health
 
