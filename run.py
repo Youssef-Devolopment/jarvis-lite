@@ -39,6 +39,13 @@ def main():
     except Exception as exc:
         log.warning("Hotkeys unavailable: %s", exc)
 
+    # System Guard: RAM watchdog (pref-gated, one sample a minute).
+    try:
+        from system import guard
+        guard.start()
+    except Exception as exc:
+        log.warning("Guard start failed: %s", exc)
+
     app.run(host=s.host, port=s.port, debug=s.debug, threaded=True)
 
 

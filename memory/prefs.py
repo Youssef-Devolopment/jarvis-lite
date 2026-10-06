@@ -49,6 +49,8 @@ _DEFAULTS = {
     "desktop_control_enabled": True,
     "opencode_model": "",
     "auto_gen_enabled": True,
+    "guard_enabled": True,
+    "guard_ram_threshold": 90,
 }
 
 
