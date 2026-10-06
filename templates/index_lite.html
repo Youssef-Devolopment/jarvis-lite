@@ -9,17 +9,34 @@
 </head>
 <body>
 <main id="app">
-  <header><h1>JARVIS<span class="lite-tag">LITE</span></h1><span id="mood"></span></header>
+  <header>
+    <h1>JARVIS<span class="lite-tag">LITE</span></h1>
+    <span id="mood"></span>
+    <span class="head-actions">
+      <button id="hud-btn" type="button" title="Floating HUD — Alt+Space">HUD</button>
+      <button id="lib-btn" type="button" title="One-click skill packs">Library</button>
+    </span>
+  </header>
   <details id="skills-groups">
     <summary><span id="skills-count"></span></summary>
     <div id="groups"></div>
+  </details>
+  <details id="library-panel">
+    <summary>Library</summary>
+    <div class="lib-bar">
+      <input id="lib-search" type="search" placeholder="Search packs…" autocomplete="off">
+      <input type="file" id="lib-import-file" accept=".json,application/json" title="Import your own pack (.json)">
+      <button id="lib-import" type="button">Import</button>
+    </div>
+    <div id="lib-list"></div>
+    <p id="lib-msg" class="hint" hidden></p>
   </details>
   <div id="log" aria-live="polite"></div>
   <form id="box">
     <input id="text" type="text" placeholder="Ask something…" autocomplete="off">
     <button type="submit">Send</button>
   </form>
-  <p class="hint"><kbd>Enter</kbd> to send · click a skill chip to fill the box</p>
+  <p class="hint"><kbd>Enter</kbd> to send · click a skill chip to fill the box · <kbd>Alt</kbd>+<kbd>Space</kbd> opens the HUD</p>
 </main>
 <script src="/static/js/lite.js"></script>
 </body>

@@ -15,6 +15,13 @@ def register(name, patterns, description=""):
     return wrap
 
 
+def unregister(name):
+    """Remove a skill by name (library uninstall / forgotten apps)."""
+    before = len(_SKILLS)
+    _SKILLS[:] = [s for s in _SKILLS if s.name != name]
+    return len(_SKILLS) != before
+
+
 def dispatch(text):
     for s in _SKILLS:
         if not s.enabled:

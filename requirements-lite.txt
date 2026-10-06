@@ -16,4 +16,5 @@ piper-tts>=1.2.0
 ddgs>=8.0
 duckduckgo-search>=8.0
 psutil>=5.9
-psutil>=5.9
+# floating HUD hotkeys (Ctrl+Alt+J / Alt+Space) — optional but recommended
+keyboard>=0.13.5

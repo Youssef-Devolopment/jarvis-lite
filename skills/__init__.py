@@ -26,6 +26,7 @@ for _g in ("core", "system", "web", "productivity"):
 del _g
 
 from skills import auto_generated  # noqa: F401
+from plugins import load_plugins as _load_community_plugins  # noqa: F401
 
 # Skills registered after grouping (auto-generated) get their own group
 # so the UI chip list always covers every loaded skill.

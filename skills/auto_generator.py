@@ -70,7 +70,8 @@ Rules:
 
 # Import roots a generated skill may use (top-level package name).
 _ALLOWED_IMPORT_ROOTS = {"skills", "logger", "re", "json", "math",
-                         "datetime", "urllib", "html", "time", "random"}
+                         "datetime", "urllib", "html", "time", "random",
+                         "secrets"}
 # Callables / attributes that are never allowed in generated code.
 _BLOCKED_CALLS = {"eval", "exec", "compile", "__import__", "open",
                   "input", "breakpoint", "exit", "quit", "system",

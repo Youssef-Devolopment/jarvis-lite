@@ -19,3 +19,4 @@ logs/
 .headless_profile/
 pending.json
 jarvis.lock
+library/user_catalog.json

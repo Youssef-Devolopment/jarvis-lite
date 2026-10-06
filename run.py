@@ -31,6 +31,14 @@ def main():
     except Exception:
         pass
 
+    # Global hotkeys: Ctrl+Alt+J opens the web UI, Alt+Space the HUD.
+    # Non-blocking, degrades to a log line without keyboard/pynput.
+    try:
+        from system import hotkey
+        hotkey.start()
+    except Exception as exc:
+        log.warning("Hotkeys unavailable: %s", exc)
+
     app.run(host=s.host, port=s.port, debug=s.debug, threaded=True)
 
 

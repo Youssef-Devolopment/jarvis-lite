@@ -1,0 +1,174 @@
+{
+  "skills": [
+    {
+      "id": "word_counter",
+      "name": "Word Counter",
+      "description": "Count words, characters and sentences in any text.",
+      "tags": [
+        "text",
+        "utility"
+      ],
+      "file": "word_counter.py"
+    },
+    {
+      "id": "percent_calc",
+      "name": "Percent Calculator",
+      "description": "\"20% of 150\" — quick percentages.",
+      "tags": [
+        "math"
+      ],
+      "file": "percent_calc.py"
+    },
+    {
+      "id": "tip_calc",
+      "name": "Tip Calculator",
+      "description": "\"tip on 50 at 18%\" — bill splitting made easy.",
+      "tags": [
+        "math"
+      ],
+      "file": "tip_calc.py"
+    },
+    {
+      "id": "bmi_calc",
+      "name": "BMI Calculator",
+      "description": "\"bmi 70kg 175cm\" — body mass index.",
+      "tags": [
+        "health",
+        "math"
+      ],
+      "file": "bmi_calc.py"
+    },
+    {
+      "id": "date_diff",
+      "name": "Date Distance",
+      "description": "\"days until 2026-12-25\" — countdowns and ages in days.",
+      "tags": [
+        "time"
+      ],
+      "file": "date_diff.py"
+    },
+    {
+      "id": "age_calc",
+      "name": "Age Calculator",
+      "description": "\"age if born 2000-05-14\" — exact age from a birth date.",
+      "tags": [
+        "time"
+      ],
+      "file": "age_calc.py"
+    },
+    {
+      "id": "rot13",
+      "name": "ROT13 Cipher",
+      "description": "\"rot13 hello\" — encode/decode ROT13 text.",
+      "tags": [
+        "text",
+        "fun"
+      ],
+      "file": "rot13.py"
+    },
+    {
+      "id": "password_gen",
+      "name": "Password Generator",
+      "description": "\"generate password 20\" — strong random passwords (crypto RNG).",
+      "tags": [
+        "security"
+      ],
+      "file": "password_gen.py"
+    },
+    {
+      "id": "coin_flip",
+      "name": "Coin Flip",
+      "description": "\"flip a coin\" — heads or tails.",
+      "tags": [
+        "fun"
+      ],
+      "file": "coin_flip.py"
+    },
+    {
+      "id": "random_pick",
+      "name": "Random Picker",
+      "description": "\"pick between pizza, sushi, tacos\" — let chance decide.",
+      "tags": [
+        "fun"
+      ],
+      "file": "random_pick.py"
+    },
+    {
+      "id": "json_format",
+      "name": "JSON Formatter",
+      "description": "\"format json {...}\" — pretty-print messy JSON.",
+      "tags": [
+        "dev"
+      ],
+      "file": "json_format.py"
+    },
+    {
+      "id": "roman_numeral",
+      "name": "Roman Numerals",
+      "description": "\"roman numeral 1987\" — numbers to Roman and back.",
+      "tags": [
+        "math",
+        "fun"
+      ],
+      "file": "roman_numeral.py"
+    },
+    {
+      "id": "palindrome",
+      "name": "Palindrome Check",
+      "description": "\"is racecar a palindrome\" — instant answer.",
+      "tags": [
+        "text",
+        "fun"
+      ],
+      "file": "palindrome.py"
+    },
+    {
+      "id": "caesar_cipher",
+      "name": "Caesar Cipher",
+      "description": "\"caesar 5 hello\" — shift encode, \"decode shift 5\" to reverse.",
+      "tags": [
+        "text",
+        "fun"
+      ],
+      "file": "caesar_cipher.py"
+    },
+    {
+      "id": "anagram",
+      "name": "Anagram Check",
+      "description": "\"are silent and listen anagrams\" — instant verdict.",
+      "tags": [
+        "text",
+        "fun"
+      ],
+      "file": "anagram.py"
+    },
+    {
+      "id": "weekday",
+      "name": "Weekday Finder",
+      "description": "\"what day is 2026-12-25\" — day of the week for any date.",
+      "tags": [
+        "time"
+      ],
+      "file": "weekday.py"
+    },
+    {
+      "id": "prime_check",
+      "name": "Prime Check",
+      "description": "\"is 97 prime\" — with the factor pair when it isn't.",
+      "tags": [
+        "math"
+      ],
+      "file": "prime_check.py"
+    },
+    {
+      "id": "leet_speak",
+      "name": "Leetspeak",
+      "description": "\"leet hello\" — 1337 speak on demand.",
+      "tags": [
+        "text",
+        "fun"
+      ],
+      "file": "leet_speak.py"
+    }
+  ]
+}
